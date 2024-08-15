@@ -65,7 +65,8 @@ def stream_markup_timer(_, chat_id, played, dur):
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             ),
-            InlineKeyboardButton( text="0 0000 0", url-f"https://t.me/Anime_Group_AGB"
+            InlineKeyboardButton( 
+                text="0 0000 0", url-f"https://t.me/Anime_Group_AGB"
             ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
@@ -82,6 +83,11 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
+        [
+            InlineKeyboardButton( 
+                text="0 0000 0", url-f"https://t.me/BRANDED WORLD"
+            ),
+        ],   
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
