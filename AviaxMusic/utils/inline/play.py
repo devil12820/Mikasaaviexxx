@@ -67,7 +67,7 @@ def stream_markup_timer(_, chat_id, played, dur):
             ),
             InlineKeyboardButton( 
                 text="0 0000 0", url-f"https://t.me/Anime_Group_AGB"
-            ),
+            )
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
