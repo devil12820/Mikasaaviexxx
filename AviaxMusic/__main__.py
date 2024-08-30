@@ -64,7 +64,7 @@ async def check_memory_usage():
     while True:
         process = psutil.Process(os.getpid())
         memory_usage = process.memory_info().rss / (1024 * 1024)  # Convert to MB
-        
+        print("RAM used:-",memory_usage)
         if memory_usage > 500:
             os.kill(os.getpid(), 9)  # Terminate the process
         
