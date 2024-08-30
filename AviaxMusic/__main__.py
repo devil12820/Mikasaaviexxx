@@ -13,7 +13,7 @@ from AviaxMusic.plugins import ALL_MODULES
 from AviaxMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
-
+j
 async def init():
     if (
         not config.STRING1
@@ -71,7 +71,9 @@ async def check_memory_usage():
         await asyncio.sleep(60)  # Sleep for 60 seconds before checking again
 
 async def main():
-    asyncio.create_task(check_memory_usage())  # Start monitoring memory usage
+    asyncio.create_task(check_memory_usage())
+    while True:
+        await asyncio.sleep(1)# Start monitoring memory usage
     # Add other async tasks or the bot's main loop here if needed
 
 if __name__ == "__main__":
