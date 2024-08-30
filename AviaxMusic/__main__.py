@@ -1,6 +1,7 @@
 import asyncio
 import importlib
-
+import psutil
+import os
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -58,5 +59,21 @@ async def init():
     LOGGER("AviaxMusic").info("Stopping Aviax Music Bot...")
 
 
+async def check_memory_usage():
+    """Check memory usage and stop the process if it exceeds 500 MB."""
+    while True:
+        process = psutil.Process(os.getpid())
+        memory_usage = process.memory_info().rss / (1024 * 1024)  # Convert to MB
+        
+        if memory_usage > 500:
+            os.kill(os.getpid(), 9)  # Terminate the process
+        
+        await asyncio.sleep(60)  # Sleep for 60 seconds before checking again
+
+async def main():
+    asyncio.create_task(check_memory_usage())  # Start monitoring memory usage
+    # Add other async tasks or the bot's main loop here if needed
+
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(init())
+    asyncio.run(main())
