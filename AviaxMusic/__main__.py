@@ -77,5 +77,6 @@ async def main():
     # Add other async tasks or the bot's main loop here if needed
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(init())
     asyncio.run(main())
+    asyncio.get_event_loop().run_until_complete(init())
+    
