@@ -68,7 +68,7 @@ async def check_memory_usage():
         if memory_usage > 500:
             os.kill(os.getpid(), 9)  # Terminate the process
         
-        await asyncio.sleep(60)  # Sleep for 60 seconds before checking again
+        await asyncio.sleep(15)  # Sleep for 60 seconds before checking again
 
 async def main():
     asyncio.create_task(check_memory_usage())
