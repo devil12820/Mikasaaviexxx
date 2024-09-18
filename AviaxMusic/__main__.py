@@ -65,7 +65,7 @@ async def check_memory_usage():
         process = psutil.Process(os.getpid())
         memory_usage = process.memory_info().rss / (1024 * 1024)  # Convert to MB
         print("RAM used:-",memory_usage)
-        if memory_usage > 500:
+        if memory_usage > 300:
             os.kill(os.getpid(), 9)  # Terminate the process
         
         await asyncio.sleep(15)  # Sleep for 60 seconds before checking again
